@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clash Royale Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="startScreen" class="screen">
+        <h1>Clash Royale Clone</h1>
+        <button onclick="startGame()">Iniciar</button>
+    </div>
+
+    <div id="gameUI" class="hidden">
+        <div class="top-bar">
+            <div class="elixir-bar">
+                <div class="elixir-inner" id="elixirInner"></div>
+            </div>
+            <div class="timer" id="timer">03:00</div>
+            <div class="score">
+                <span id="playerCrowns">0</span> - <span id="enemyCrowns">0</span>
+            </div>
+        </div>
+
+        <div class="game-board" id="gameBoard">
+            <div class="lane top">
+                <div class="tower left enemy" id="enemyTower1"></div>
+                <div class="tower right enemy" id="enemyTower2"></div>
+                <div class="king-tower enemy" id="enemyKingTower"></div>
+            </div>
+            <div class="river"></div>
+            <div class="lane bottom">
+                <div class="tower left ally" id="allyTower1"></div>
+                <div class="tower right ally" id="allyTower2"></div>
+                <div class="king-tower ally" id="allyKingTower"></div>
+            </div>
+        </div>
+
+        <div class="cards">
+            <div class="card" onclick="spawnTroop('giant')">Giant (5)</div>
+            <div class="card" onclick="spawnTroop('archer')">Archer (3)</div>
+            <div class="card" onclick="spawnTroop('miniPekka')">Mini P.E.K.K.A (4)</div>
+        </div>
+    </div>
+
+    <div id="resultScreen" class="screen hidden">
+        <h1 id="resultText"></h1>
+        <button onclick="restartGame()">Reiniciar</button>
+    </div>
+
+    <audio id="attackSound" src="https://www.soundjay.com/mechanical/sounds/switch-1.mp3"></audio>
+    <audio id="winSound" src="https://www.soundjay.com/human/sounds/applause-8.mp3"></audio>
+    <audio id="loseSound" src="https://www.soundjay.com/human/sounds/boo-01.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
